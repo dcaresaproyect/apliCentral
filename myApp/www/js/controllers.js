@@ -2,11 +2,13 @@ angular.module('starter.controllers', [])
 
 .controller('DashCtrl', function($scope) {})
 
-.controller('xxx', function($scope) {})
+.controller('CtrlDetallePromocion', function($scope, $stateParams, Promos) {
+  $scope.myListaPromociones = Promos.getByProveedor($stateParams.idProveedor);
+})
 
 .controller('ChatsCtrl', function($scope, Chats) {
   // With the new view caching in Ionic, Controllers are only called
-  // when they are recreated or on app start, instead of every page change.
+  // when they are recreated or on app start, ins nbtead of every page change.
   // To listen for when this page is active (for example, to refresh data),
   // listen for the $ionicView.enter event:
   //
@@ -20,19 +22,8 @@ angular.module('starter.controllers', [])
 })
 
 
-.controller('PromosCtrl', function($scope, Chats) {
-  // With the new view caching in Ionic, Controllers are only called
-  // when they are recreated or on app start, instead of every page change.
-  // To listen for when this page is active (for example, to refresh data),
-  // listen for the $ionicView.enter event:
-  //
-  //$scope.$on('$ionicView.enter', function(e) {
-  //});
-
-  $scope.chats = Chats.all();
-  $scope.remove = function(chat) {
-    Chats.remove(chat);
-  };
+.controller('PromosCtrl', function($scope, Proveedores) {
+  $scope.myProveedores = Proveedores.all();
 })
 
 .controller('ChatDetailCtrl', function($scope, $stateParams, Chats) {

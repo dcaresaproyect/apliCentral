@@ -71,12 +71,12 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
     }) 
 
 
-  .state('tab.promo-img', {
-      url: '/promo-img',
+  .state('tab.promoDetalle', {
+      url: '/promoDetalle/:idProveedor',
       views: {
         'tab-promos': {
           templateUrl: 'templates/promo-img.html',
-          controller: 'xxx'
+          controller: 'CtrlDetallePromocion'
         }
       }
     }) 
